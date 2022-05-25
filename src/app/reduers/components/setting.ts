@@ -2,7 +2,7 @@ import {
   DEFAULT_DEADLINE,
   DEFAULT_SLIPVALUE,
   IS_CUSTOM_SLIPVALUE,
-  UPDATE_SETTING,
+  UPDATE_SETTING
 } from '@lib';
 
 const initialState = {

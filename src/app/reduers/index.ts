@@ -9,7 +9,7 @@ const rootReducer = {
   setting,
   vault,
   tokens,
-  rates,
+  rates
 };
 
 export default rootReducer;

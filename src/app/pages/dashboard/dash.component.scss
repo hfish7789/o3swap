@@ -119,6 +119,7 @@ section.page-container {
     border-radius: 4px;
     color: #8aa1a1;
 }
+
 .page-container .charts .content .chain .chain-btn img {
     width: 12px;
     margin-left: 9px;
@@ -126,6 +127,16 @@ section.page-container {
     position: absolute;
     right: 10px;
 }
+
+.page-container .top .item .circle {
+    display: inline-block;
+    vertical-align: middle;
+    width: 8px;
+    height: 8px;
+    background: #46b069;
+    border-radius: 50%;
+}
+
 .page-container .charts .time-type {
     margin-top: 25px;
     margin-right: 10px;
@@ -133,12 +144,15 @@ section.page-container {
     color: #546a6a;
     cursor: pointer;
 }
+
 .page-container .charts .time-type span.active {
     color: #8aa1a1;
 }
+
 .group-container .tvl-charts-box {
     width: 100%;
 }
+
 .page-container .charts > div {
     width: calc(50% - 5px);
     padding: 30px 20px 40px 40px;
@@ -147,14 +161,17 @@ section.page-container {
     border-radius: 12px;
     margin-top: 20px;
 }
+
 .page-container .table-container {
     margin-top: 40px;
 }
+
 .page-container .table-container .title {
     color: #fff;
     font-size: 18px;
     font-family: fontDemiBold;
 }
+
 .page-container .table-container .content {
     background: #1e1e1e;
     border: 1px solid #353535;
@@ -162,14 +179,7 @@ section.page-container {
     margin-top: 24px;
     padding: 15px 30px;
 }
+
 .group-container {
     width: 100%;
-}
-.page-container .top .item .circle {
-    display: inline-block;
-    vertical-align: middle;
-    width: 8px;
-    height: 8px;
-    background: #46b069;
-    border-radius: 50%;
 }

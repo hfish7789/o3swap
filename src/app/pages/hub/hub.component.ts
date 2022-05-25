@@ -21,7 +21,7 @@ import { Store } from '@ngrx/store';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import BigNumber from 'bignumber.js';
-import { interval, Observable, Unsubscribable } from 'rxjs';
+import { Observable, Unsubscribable } from 'rxjs';
 import { ApproveComponent } from '@shared';
 
 interface State {
@@ -29,11 +29,13 @@ interface State {
   tokens: any;
   rates: any;
 }
+
 @Component({
   selector: 'app-hub',
   templateUrl: './hub.component.html',
   styleUrls: ['./hub.component.scss'],
 })
+
 export class HubComponent implements OnInit, OnDestroy {
   CONST_BRIDGE_TOKENS = CONST_BRIDGE_TOKENS;
   SOURCE_TOKEN_SYMBOL = SOURCE_TOKEN_SYMBOL;

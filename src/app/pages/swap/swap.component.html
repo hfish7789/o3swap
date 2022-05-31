@@ -1,0 +1,10 @@
+<app-swap-home *ngIf="pageStatus==='home'" [fromToken]="fromToken" [toToken]="toToken" [inputAmount]="inputAmount"
+  [chooseSwapPath]="initResultData?.chooseSwapPath" (toInquiryPage)="toInquiryPage($event)"
+  (toResultPage)="toResultPage()">
+</app-swap-home>
+
+<app-swap-result *ngIf="pageStatus==='result'" [fromToken]="fromToken" [toToken]="toToken" [inputAmount]="inputAmount"
+  [initData]="initResultData" (closePage)="closeResultPage($event)" (swapFail)="swapFail()">
+</app-swap-result>
+
+<app-tx-progress [txAtPage]="'swap'"></app-tx-progress>

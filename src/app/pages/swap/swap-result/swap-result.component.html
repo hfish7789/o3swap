@@ -1,0 +1,86 @@
+<section class="wrapper inquiry-wrapper" *ngIf="showInquiry">
+  <p class="title">Swap</p>
+  <ng-lottie class="inquiry-json" [options]="inquiryOptions"></ng-lottie>
+  <p class="inquirying">Requesting quote...</p>
+</section>
+
+<section class="wrapper result-wrapper" *ngIf="!showInquiry">
+  <p class="title">Swap</p>
+  <div class="exchange-amount">
+    <p class="left">
+      <span class="token-from">{{ inputAmount }} {{ fromToken?.symbol }}</span>
+      <img class="exchange" src="/assets/images/swap/exchange.png" alt="">
+      <span class="token-to">{{ toToken?.symbol }}</span>
+    </p>
+    <span (click)="backToHomePage()" class="arrow back">
+      <img src="/assets/images/swap/arrow-down.png" alt="">
+    </span>
+  </div>
+  <div class="receive content-border content-border-active">
+    <p class="sub-title">Receive</p>
+    <p class="amount">{{ chooseSwapPath?.receiveAmount | transNumber }} {{ toToken?.symbol }}</p>
+    <p class="fiat">≈＄{{ chooseSwapPath?.fiat }}</p>
+    <div class="optimal">Optimal</div>
+  </div>
+  <p class="more-price" (click)="showRoutingModal()">More Trading Price ></p>
+  <div class="fee-group">
+    <div class="fee-item">
+      <p class="label">From</p>
+      <p class="value" *ngIf="fromAddress">
+        <img *ngIf="fromToken?.chain==='NEO'" src="/assets/images/swap-chains/NEO.png" alt="">
+        <img *ngIf="fromToken?.chain==='ETH'" src="/assets/images/swap-chains/ETH.png" alt="">
+        <img *ngIf="fromToken?.chain==='BSC'" src="/assets/images/swap-chains/BSC.png" alt="">
+        <img *ngIf="fromToken?.chain==='HECO'" src="/assets/images/swap-chains/HECO.png" alt="">
+        {{ fromAddress | shortAddress: 10 }}
+      </p>
+    </div>
+    <div class="fee-item">
+      <p class="label">To</p>
+      <p class="value" *ngIf="toAddress">
+        <img *ngIf="toToken?.chain==='NEO'" src="/assets/images/swap-chains/NEO.png" alt="">
+        <img *ngIf="toToken?.chain==='ETH'" src="/assets/images/swap-chains/ETH.png" alt="">
+        <img *ngIf="toToken?.chain==='BSC'" src="/assets/images/swap-chains/BSC.png" alt="">
+        <img *ngIf="toToken?.chain==='HECO'" src="/assets/images/swap-chains/HECO.png" alt="">
+        {{ toAddress | shortAddress: 10 }}
+      </p>
+    </div>
+    <div class="fee-item" [ngClass]="{route: chooseSwapPath?.swapPath.length > 4}">
+      <p class="label">Routing</p>
+      <ul class="value routes">
+        <li *ngFor="let name of chooseSwapPath?.swapPath; index as index">
+          <span *ngIf="index!==0">></span>
+          <img [src]="chooseSwapPath?.swapPathLogo[index]" alt="">{{ name }}
+        </li>
+      </ul>
+    </div>
+    <div class="fee-item">
+      <p class="label">Rate</p>
+      <p class="value">
+        1 {{ fromToken?.symbol }} = {{ price }} {{ toToken?.symbol }}
+      </p>
+    </div>
+    <div class="fee-item">
+      <p class="label">lnverse Rate</p>
+      <p class="value">
+        1 {{ toToken?.symbol }} = {{ lnversePrice }} {{ fromToken?.symbol }}
+      </p>
+    </div>
+    <div class="fee-item" *ngIf="showPolyFee">
+      <p class="label">Poly Fee</p>
+      <div class="value">{{ polyFee | transNumber }} {{ SOURCE_TOKEN_SYMBOL[fromToken.chain] }}</div>
+    </div>
+    <div class="fee-item" *ngIf="showO3SwapFee">
+      <p class="label">Quote includes a {{ O3_AGGREGATOR_FEE }}% O3Swap fee</p>
+    </div>
+  </div>
+  <button class="confirm" (click)="swap()" [ngClass]="{active: chooseSwapPath}">Confirm</button>
+  <div class="setting-group">
+    <div class="refresh">
+      After<span>{{ inquiryTime }}</span>s
+      <img (click)="reGetSwapPath()" src="/assets/images/swap/refresh.png" alt="">
+    </div>
+  </div>
+</section>
+
+<app-wallet-connect [show]="showConnectWallet" [connectChainType]="connectChainType" connectOne="true"
+  (closePage)="showConnectWallet=false"></app-wallet-connect>

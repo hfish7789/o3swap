@@ -1,0 +1,355 @@
+.page-container {
+  padding-bottom: 40px;
+  .group-container {
+    // padding: 50px 40px 68px;
+    margin: auto;
+    width: 1000px;
+    background: #1e1e1e;
+    border-radius: 20px;
+    display: flex;
+    .item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+      padding-left: 40px;
+      padding-right: 30px;
+      height: 120px;
+      &:nth-child(2) {
+        position: relative;
+        &::before,
+        &::after {
+          position: absolute;
+          top: 50%;
+          margin-top: -25px;
+          display: block;
+          content: "";
+          width: 1px;
+          height: 50px;
+          background-color: #353535;
+        }
+        &::before {
+          left: 0;
+        }
+        &::after {
+          right: 0;
+        }
+      }
+      .header {
+        font-size: 14px;
+        color: #46b069;
+        font-family: "fontRegular";
+        span {
+          color: #8aa1a1;
+        }
+      }
+      .content {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        font-family: "fontMedium";
+      }
+      .value {
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        font-size: 18px;
+        .rate {
+          margin-top: 8px;
+          font-size: 12px;
+          color: #8aa1a1;
+          font-family: "fontRegular";
+        }
+      }
+    }
+  }
+  .tab-container {
+    background-color: transparent;
+    border-radius: 0 0 20px 20px;
+    .tab-wrap {
+      position: relative;
+      padding-top: 60px;
+      width: 100%;
+      .tab-nav-scroll {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 96px;
+        .tabs {
+          font-family: "fontMedium";
+          padding-top: 15px;
+          position: absolute;
+          top: 10px;
+          width: 50%;
+          height: 96px;
+          font-size: 18px;
+
+          color: #fff;
+          text-align: center;
+          background: no-repeat;
+          background: url("/assets/images/bridge-liquidity/defult.png")
+            no-repeat;
+          cursor: pointer;
+          &.tabs-add {
+            left: 0;
+            &:hover {
+              background: url("/assets/images/bridge-liquidity/add-hover.png")
+                no-repeat;
+            }
+          }
+          &.tabs-remove {
+            right: 0;
+            &:hover {
+              background: url("/assets/images/bridge-liquidity/remove-hover.png")
+                no-repeat;
+              background-position: 100%;
+            }
+          }
+          &.addActive {
+            top: 0;
+            background: url("/assets/images/bridge-liquidity/active.png")
+              no-repeat !important;
+          }
+          &.removeActive {
+            top: 0;
+            background: url("/assets/images/bridge-liquidity/active.png")
+              no-repeat !important;
+          }
+        }
+      }
+      .tab-content {
+        font-family: "fontRegular";
+        position: relative;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        padding: 40px 30px 30px 40px;
+        background-color: #202020;
+        z-index: 100;
+        .list-wrap {
+          li {
+            margin-top: 10px;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            .detail {
+              margin-right: 10px;
+              padding-left: 30px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              flex: 1;
+              background-color: hsl(0, 0%, 16%);
+              border-radius: 10px;
+              .left {
+                display: flex;
+                align-items: center;
+                .item-logo-box {
+                  position: relative;
+                  .token-type {
+                    width: 26px;
+                    position: absolute;
+                    left: 2px;
+                    bottom: 0px;
+                  }
+                  .token-logo {
+                    width: 30px;
+                    height: 30px;
+                    vertical-align: middle;
+                    margin-right: 15px;
+                  }
+                }
+                .token-name {
+                  font-size: 16px;
+                }
+              }
+              .right {
+                display: flex;
+                font-size: 14px;
+                color: #8aa1a1;
+                .input-container {
+                  width: 300px;
+                  height: 36px;
+                  border-radius: 10px;
+                  font-size: 20px;
+                  input {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                    border: none;
+                    color: #fff;
+                    text-align: right;
+                    &::placeholder {
+                      color: #4a4a4a;
+                    }
+                  }
+                }
+                .max-status {
+                  margin: 0 20px;
+                  width: 50px;
+                  height: 36px;
+                  line-height: 36px;
+                  text-align: center;
+                  background: #303030;
+                  border-radius: 10px;
+                  cursor: not-allowed;
+                  pointer-events: none;
+                  color: #4a4a4a;
+                  cursor: pointer;
+                  &.active {
+                    color: #6162ef;
+                    pointer-events: auto;
+                    cursor: pointer;
+                    &:hover {
+                      background-color: #6162ef;
+                      color: #fff;
+                    }
+                  }
+                }
+                .balance {
+                  width: 150px;
+                  position: relative;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  color: #8aa1a1;
+                  line-height: 18px;
+                  &:before {
+                    position: absolute;
+                    left: 0;
+                    top: 5px;
+                    display: block;
+                    content: "";
+                    width: 1px;
+                    height: 20px;
+                    background: #353535;
+                  }
+                  // span {
+                  //   width: 100%;
+                  //   overflow: hidden;
+                  //   text-overflow: ellipsis;
+                  // }
+                }
+              }
+            }
+            .receive {
+              justify-content: space-between;
+              width: 150px;
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              color: #546a6a;
+              margin-right: 10px;
+              padding-top: 15px;
+              padding-bottom: 15px;
+              background: #252525;
+              border-radius: 10px;
+              span {
+                color: #546a6a;
+              }
+            }
+          }
+        }
+        .btn-liquidity {
+          font-family: "fontMedium";
+        }
+        .big-btn {
+          display: none;
+          margin: 40px auto 0;
+          font-size: 18px;
+          &.active {
+            display: inline-flex;
+          }
+        }
+        .slipvalue {
+          text-align: right;
+          margin-top: 20px;
+          padding-right: 20px;
+          .name {
+            color: #8aa1a1;
+            font-family: "fontRegular";
+          }
+          .value {
+            color: #46b069;
+          }
+        }
+      }
+    }
+  }
+  .blp-detail {
+    display: flex;
+    .left,
+    .right {
+      padding: 30px 50px;
+      flex: 1;
+      &.left {
+        .item-logo-box {
+          position: relative;
+          .token-type {
+            width: 30px;
+            position: absolute;
+            left: 2px;
+            bottom: 0px;
+          }
+          .token-logo {
+            width: 34px;
+            height: 34px;
+            vertical-align: middle;
+            margin-right: 10px;
+          }
+        }
+        .item-list {
+          font-family: "fontMedium";
+          .token-name {
+            font-family: "fontDemiBold";
+          }
+          .value {
+            font-family: "fontRegular";
+          }
+          &:not(:first-child) {
+            margin-top: 30px;
+          }
+        }
+        .item-list,
+        .progress-container {
+          display: flex;
+          width: 100%;
+          height: 20px;
+          color: #8aa1a1;
+          .progress {
+            height: 6px;
+            width: 300px;
+          }
+        }
+      }
+      &.right .item-list {
+        font-family: "fontRegular";
+        color: #8aa1a1;
+        justify-content: space-between;
+        height: 30px;
+        .value {
+          color: #46b069;
+        }
+      }
+      .item-list {
+        display: flex;
+        align-items: center;
+        .value {
+          color: #ffffff;
+          justify-content: space-between;
+        }
+      }
+      > div {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+  .row1 {
+    margin-top: 40px;
+  }
+  .row2 {
+    margin-top: 20px;
+  }
+}

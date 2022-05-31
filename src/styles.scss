@@ -1,0 +1,111 @@
+/* You can add global styles to this file, and also import other style files */
+@import './styles/modal.scss';
+@import './styles/btn.scss';
+@import './styles/page.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+address,
+dl,
+ol,
+p,
+pre,
+ul {
+  margin: 0;
+}
+
+// *:focus {
+//   outline: none;
+// }
+
+@font-face {
+  font-family: "fontRegular";
+  src: url("/assets/fonts/NeverMind-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "fontMedium";
+  src: url("/assets/fonts/NeverMind-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "fontBold";
+  src: url("/assets/fonts/NeverMind-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "fontDemiBold";
+  src: url("/assets/fonts/NeverMind-DemiBold.ttf") format("truetype");
+}
+
+html,
+body {
+  font-family: "fontMedium";
+  font-size: 14px;
+  line-height: 1;
+  color: #fff;
+  min-width: 1440px;
+}
+
+button {
+  outline: none;
+  border: none;
+  background: none;
+  font-family: "fontMedium";
+}
+
+input {
+  outline: none;
+  background: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background-color: #121212;
+  border-radius: 5px;
+}
+
+.scroll::-webkit-scrollbar-corner {
+  background: transparent;
+}

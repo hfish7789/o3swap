@@ -1,0 +1,30 @@
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    background: rgba(35, 43, 46, 0.3);
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        background: url('/assets/images/loading.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: spin 600ms infinite linear;
+    }
+}

@@ -1,0 +1,48 @@
+<div class="group-container pool">
+  <div class="header">Cross-chain Pool</div>
+  <div class="group-item">
+    <div class="pool-detail">
+      <div class="list">
+        <div class="item">
+          <div class="value">$--</div>
+          <div class="name">TVL</div>
+        </div>
+        <div class="item">
+          <div class="value">$--</div>
+          <div class="name">VOL</div>
+        </div>
+        <div class="item">
+          <div class="value">--</div>
+          <div class="name">APR</div>
+        </div>
+        <div class="item">
+          <div class="value">
+            <img src="/assets/images/hub/reward-tokens.png" alt="" class="token-logo">
+          </div>
+          <div class="name">REWARDS</div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="btn-primary deposit-btn" [routerLink]="['/hub/liquidity', 'add']">
+          Deposit
+        </div>
+        <div class="btn-primary withdrawal-btn" [routerLink]="['/hub/liquidity', 'remove']">
+          Withdraw
+        </div>
+      </div>
+    </div>
+    <div class="token-detail">
+      <img src="/assets/images/logo-O3.png" alt="" class="token-logo">
+      <div class="token-name">
+        O3Pool <span>(USDT+BUSD+HUSD)</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="group-container statistical-data">
+  <div class="header">Total Pool Deposits & Daily Volume</div>
+  <div class="desc">
+    <p>Total pool deposit: $--</p>
+    <p>Daily volume: $--</p>
+  </div>
+</div>

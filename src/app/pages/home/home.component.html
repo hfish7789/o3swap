@@ -1,0 +1,254 @@
+<section class="content home">
+  <div class="wrapper">
+    <p class="title">Cross-chain</p>
+    <p class="desc1">Aggregation Protocol</p>
+    <p class="desc2">Access multi-chain liquidity sources on one platform</p>
+    <!-- <ng-lottie class="price-json" [options]="priceOptions"></ng-lottie> -->
+    <img class="price-json" src="/assets/images/home/price.png" alt="">
+  </div>
+</section>
+<section class="content exchanges">
+  <div class="wrapper">
+    <img src="/assets/images/home/exchanges/class-bg.png" class="bg" alt="">
+    <p class="sub-title">Liquidity Sources</p>
+    <div class="exchanges-group">
+      <ul class="col col1">
+        <li *ngFor="let item of liquiditySource.eth">
+          <a [href]="item.url" target="_blank"><img [src]="item.logo" alt="">{{ item.name }}</a>
+        </li>
+      </ul>
+      <ul class="col col2">
+        <li *ngFor="let item of liquiditySource.bsc">
+          <a [href]="item.url" target="_blank"><img [src]="item.logo" alt="">{{ item.name }}</a>
+        </li>
+      </ul>
+      <ul class="col col3">
+        <li *ngFor="let item of liquiditySource.neo">
+          <a [href]="item.url" target="_blank"><img [src]="item.logo" alt="">{{ item.name }}</a>
+        </li>
+      </ul>
+      <ul class="col col4">
+        <li *ngFor="let item of liquiditySource.heco">
+          <a [href]="item.url" target="_blank"><img [src]="item.logo" alt="">{{ item.name }}</a>
+        </li>
+      </ul>
+      <ul class="col col5"></ul>
+    </div>
+  </div>
+</section>
+<section class="content price">
+  <div class="wrapper">
+    <div class="desc">
+      <p class="desc-title">{{ "feature1Title" | translate: lang }}</p>
+      <p><img class="dot" src="/assets/images/home/dot.png" alt="">{{ "feature1Detail1" | translate: lang }}</p>
+      <p><img class="dot" src="/assets/images/home/dot.png" alt="">{{ "feature1Detail2" | translate: lang }}</p>
+      <p><img class="dot" src="/assets/images/home/dot.png" alt="">{{ "feature1Detail3" | translate: lang }}</p>
+    </div>
+    <ng-lottie class="swap-json" [options]="swapOptions"></ng-lottie>
+  </div>
+</section>
+<section class="content exchange-click">
+  <div class="wrapper">
+    <!-- <ng-lottie class="exchange-json" [options]="exchangeOptions"></ng-lottie> -->
+    <img class="exchange-json" src="/assets/images/home/exchange.png" alt="">
+    <div class="desc">
+      <p class="desc-title">{{ "feature2Title" | translate: lang }}</p>
+      <p><img class="dot" src="/assets/images/home/dot.png" alt="">{{ "feature2Detail1" | translate: lang }}</p>
+      <p><img class="dot" src="/assets/images/home/dot.png" alt="">{{ "feature2Detail2" | translate: lang }}</p>
+      <p><img class="dot" src="/assets/images/home/dot.png" alt="">{{ "feature2Detail3" | translate: lang }}</p>
+    </div>
+  </div>
+</section>
+<section class="content roadmap">
+  <div class="wrapper">
+    <p class="sub-title">Roadmap</p>
+    <div class="roadmap-bg">
+      <div class="roadmap-content">
+        <div class="time time1" (mouseenter)="enterRoadmap(0)" (mouseleave)="leaveRoadmap()"
+          [ngClass]="{active: roadmapIndex===0}">
+          <img src="/assets/images/home/roadmap-dot.png" alt="">
+          <p class="name">2021 Q1</p>
+          <div class="desc">
+            <p>1. {{ "roadmapQ1Detail1" | translate: lang }}</p>
+            <p>2. {{ "roadmapQ1Detail2" | translate: lang }}</p>
+            <p>3. {{ "roadmapQ1Detail3" | translate: lang }}</p>
+          </div>
+        </div>
+        <div class="time time2" (mouseenter)="enterRoadmap(1)" (mouseleave)="leaveRoadmap()"
+          [ngClass]="{active: roadmapIndex===1}">
+          <img src="/assets/images/home/roadmap-dot.png" alt="">
+          <p class="name">2021 Q2-Q3</p>
+          <div class="desc">
+            <p>1. {{ "roadmapQ2Q3Detail1" | translate: lang }}</p>
+            <p>2. {{ "roadmapQ2Q3Detail2" | translate: lang }}</p>
+            <p>3. {{ "roadmapQ2Q3Detail3" | translate: lang }}</p>
+          </div>
+        </div>
+        <div class="time time3" (mouseenter)="enterRoadmap(2)" (mouseleave)="leaveRoadmap()"
+          [ngClass]="{active: roadmapIndex===2}">
+          <img src="/assets/images/home/roadmap-dot.png" alt="">
+          <p class="name">2021 Q4</p>
+          <div class="desc">
+            <p>1. {{ "roadmapQ4Detail1" | translate: lang }}</p>
+            <p>2. {{ "roadmapQ4Detail2" | translate: lang }}</p>
+            <p>2. {{ "roadmapQ4Detail3" | translate: lang }}</p>
+          </div>
+        </div>
+        <div class="time time4" (mouseenter)="enterRoadmap(3)" (mouseleave)="leaveRoadmap()"
+          [ngClass]="{active: roadmapIndex===3}">
+          <img src="/assets/images/home/roadmap-dot.png" alt="">
+          <p class="name">2022</p>
+          <div class="desc">
+            <p>1. {{ "roadmap2022Detail1" | translate: lang }}</p>
+            <p>2. {{ "roadmap2022Detail2" | translate: lang }}</p>
+            <p>3. {{ "roadmap2022Detail3" | translate: lang }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <section class="content activities">
+    <p class="sub-title">Activities</p>
+    <div class="activities-content">
+      <div class="row">
+        <div class="activity" [ngClass]="{page: enterActiviteFirst===false}" (mouseenter)="enterActiviteFirst=true"
+          (mouseleave)="enterActiviteFirst=false">
+          <p class="title">Added multi currency support</p>
+          <p class="desc">Release ETH Swap.Publish O3 SWAP white paper and economic model.Release O3 (O3 SWAP
+            token), Release DAO</p>
+        </div>
+        <div class="activity" [ngClass]="{page: enterActiviteFirst===true}">
+          <p class="title">Added multi currency support</p>
+          <p class="desc">Release ETH Swap.Publish O3 SWAP white paper and economic model.Release O3 (O3 SWAP
+            token), Release DAO</p>
+        </div>
+        <div class="activity">
+          <p class="title">Added multi currency support</p>
+          <p class="desc">Release ETH Swap.Publish O3 SWAP white paper and economic model.Release O3 (O3 SWAP
+            token), Release DAO</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="activity">
+          <p class="title">Added multi currency support</p>
+          <p class="desc">Release ETH Swap.Publish O3 SWAP white paper and economic model.Release O3 (O3 SWAP
+            token), Release DAO</p>
+        </div>
+        <div class="activity" [ngClass]="{page: enterActiviteLast===true}">
+          <p class="title">Added multi currency support</p>
+          <p class="desc">Release ETH Swap.Publish O3 SWAP white paper and economic model.Release O3 (O3 SWAP
+            token), Release DAO</p>
+        </div>
+        <div class="activity" [ngClass]="{page: enterActiviteLast===false}" (mouseenter)="enterActiviteLast=true"
+          (mouseleave)="enterActiviteLast=false">
+          <p class="title">Added multi currency support</p>
+          <p class="desc">Release ETH Swap.Publish O3 SWAP white paper and economic model.Release O3 (O3 SWAP
+            token), Release DAO</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+<section class="content o3wallet">
+  <div class="wrapper">
+    <img class="logo" src="/assets/images/home/o3wallet-logo.png" alt="">
+    <div class="left">
+      <p class="title">O3 Wallet</p>
+      <p class="desc">A multi-chain crypto wallet. Manage your assets simply and safely</p>
+    </div>
+    <a target="_blank" href="https://o3.network/#download"><button class="download">Download</button></a>
+    <img class="screenshot" src="/assets/images/home/o3wallet-screenshot.png" alt="">
+  </div>
+</section>
+<section class="content partners">
+  <div class="wrapper">
+    <p class="sub-title center">Partners & Investors</p>
+    <img src="/assets/images/home/partners/title-partners.png" class="title" alt="">
+    <div class="partners-group">
+      <a target="_blank" href="https://www.binance.org/en/smartChain">
+        <img src="/assets/images/home/partners/p-bsc.png" alt="">
+      </a>
+      <a target="_blank" href="https://neo.org/">
+        <img src="/assets/images/home/partners/p-neo.png" alt="">
+      </a>
+      <a target="_blank" href="https://www.hecochain.com/en-us/">
+        <img src="/assets/images/home/partners/p-heco.png" alt="">
+      </a>
+      <a target="_blank" href="https://www.poly.network/">
+        <img src="/assets/images/home/partners/p-poly.png" alt="">
+      </a>
+    </div>
+    <img src="/assets/images/home/partners/title-investors.png" class="title" alt="">
+    <div class="partners-group">
+      <a target="_blank" href="https://ngc.fund/home">
+        <img src="/assets/images/home/partners/ngc.png" alt="">
+      </a>
+      <a target="_blank" href="https://www.okex.com/tr/blockdream-ventures">
+        <img src="/assets/images/home/partners/okex.png" alt="">
+      </a>
+      <a target="_blank" href="http://www.7xvc.com/">
+        <img src="/assets/images/home/partners/sevenx.png" alt="">
+      </a>
+      <a target="_blank" href="https://www.fbg.capital/">
+        <img src="/assets/images/home/partners/fbg.png" alt="">
+      </a>
+    </div>
+    <div class="partners-group investors">
+      <a target="_blank" href="https://neo.org/">
+        <img src="/assets/images/home/partners/neo.png" alt="">
+      </a>
+      <a target="_blank" href="https://btc12.com/">
+        <img src="/assets/images/home/partners/capital.png" alt="">
+      </a>
+      <a target="_blank" href="https://moonwhale.ventures/">
+        <img src="/assets/images/home/partners/moonwhale.png" alt="">
+      </a>
+      <a target="_blank" href="https://www.incuba.capital/">
+        <img src="/assets/images/home/partners/Incuba.png" alt="">
+      </a>
+      <a target="_blank" href="https://puzzle.ventures/">
+        <img src="/assets/images/home/partners/puzzle.png" alt="">
+      </a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="subscript">
+    <p class="title">Receive our Newsletter</p>
+    <div class="email" *ngIf="canSubscribe" [ngClass]="{focus: isFocus}">
+      <input type="email" (focus)="isFocus=true" (blur)="isFocus=false" [(ngModel)]="email"
+        placeholder="Please fill in your email address">
+      <button nz-button [nzLoading]="isLoadingEmail" (click)="subscriptNews()" class="submit">Subscribe</button>
+    </div>
+    <button *ngIf="!canSubscribe" class="success">Successfully subscribed</button>
+  </div>
+  <div class="contacts">
+    <a target="_blank" href="https://github.com/O3Labs">
+      <img src="/assets/images/home/contact/github.png" alt="">
+    </a>
+    <a target="_blank" href="https://twitter.com/O3_Labs">
+      <img src="/assets/images/home/contact/twitter.png" alt="">
+    </a>
+    <a target="_blank" href="https://t.me/O3LabsOfficial">
+      <img src="/assets/images/home/contact/telegram.png" alt="">
+    </a>
+    <a target="_blank" href="https://medium.com/o3-labs-o3-wallet">
+      <img src="/assets/images/home/contact/medium.png" alt="">
+    </a>
+    <a target="_blank" href="mailto:contact@o3swap.com">
+      <img src="/assets/images/home/contact/email.png" alt="">
+    </a>
+  </div>
+  <div class="bottom">
+    <img src="/assets/images/home/footer-logo.png" alt="">
+    <p class="copyright">© {{ copyRightYear }} O3 Labs Inc.</p>
+    <!-- <p class="language">
+        <span [ngClass]="{active: lang==='en'}" (click)="changeLang('en')">EN</span>
+        <span class="line">|</span>
+        <span [ngClass]="{active: lang==='zh'}" (click)="changeLang('zh')">CN</span>
+      </p> -->
+    <a href="https://docs.o3swap.com/" target="_blank">
+      <p class="doc">Doc</p>
+    </a>
+  </div>
+</footer>

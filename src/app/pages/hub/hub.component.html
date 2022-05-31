@@ -1,0 +1,104 @@
+<section class="page-container">
+  <div class="group-container swap">
+    <div *ngIf="inputAmountError" class="input-token-error">{{ inputAmountError }}</div>
+    <div class="token-select-container">
+      <div class="left-container">
+        <div class="header">
+          <div class="left">
+            You pay<span *ngIf="fromToken" class="token-type" [ngClass]="fromToken?.chain">{{ fromToken.type }}</span>
+          </div>
+          <div class="right">Balance: <app-long-balance [balance]="fromToken?.amount"></app-long-balance>
+            {{ fromToken?.symbol }}
+            <span class="max" (click)="allInputAmount()">Max</span></div>
+        </div>
+        <div class="content">
+          <div class="token-name" [ngClass]="{active: fromToken?.symbol}" (mouseenter)="showTokenListModal('from')"
+            (mouseleave)="hideTokenListModal('from')">
+            <img *ngIf="fromToken?.logo" [src]="fromToken?.logo" alt="" class="token-logo">
+            {{ fromToken?.symbol || 'SELECT' }}
+            <img src="/assets/images/swap/arrow-down.png" alt="" class="arrow">
+            <ul *ngIf="showFromTokenList" class="dropdown" (mouseenter)="showTokenListModal('from')"
+              (mouseleave)="hideTokenListModal('from')">
+              <li *ngFor="let token of USD_TOKENS" (click)="selectToken('from', token)">
+                <img [src]="token.logo" alt="">
+                <span>{{ token.symbol }}</span>
+                <span class="token-type" [ngClass]="token.chain">{{ token.type }}</span>
+              </li>
+              <li *ngFor="let token of CONST_BRIDGE_TOKENS" class="disabled">
+                <img [src]="token.logo" alt="">
+                <span>{{ token.symbol }}</span>
+                <span class="token-type" *ngIf="token.type" [ngClass]="token.chain">{{ token.type }}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="input-container">
+            <input type="number" title="Token Amount" (input)="changeInputAmount($event)" [ngModel]="inputAmount"
+              placeholder="0">
+          </div>
+        </div>
+        <div class="asset">≈ $ {{ inputAmountFiat || '0.00' }}</div>
+      </div>
+      <img class="transform" (click)="exchangeToken()" src="/assets/images/swap/exchange-home.png" alt="">
+      <div class="right-container">
+        <div class="header">
+          <div class="left">
+            You will receive<span *ngIf="toToken" class="token-type"
+              [ngClass]="toToken?.chain">{{ toToken.type }}</span>
+          </div>
+        </div>
+        <div class="content">
+          <div class="token-name" [ngClass]="{active: toToken?.symbol}" (mouseenter)="showTokenListModal('to')"
+            (mouseleave)="hideTokenListModal('to')">
+            <img *ngIf="toToken?.logo" [src]="toToken?.logo" alt="" class="token-logo">
+            {{ toToken?.symbol || 'SELECT' }}
+            <img src="/assets/images/swap/arrow-down.png" alt="" class="arrow">
+            <ul *ngIf="showToTokenList" class="dropdown" (mouseenter)="showTokenListModal('to')"
+              (mouseleave)="hideTokenListModal('to')">
+              <li *ngFor="let token of USD_TOKENS" (click)="selectToken('to', token)">
+                <img [src]="token.logo" alt="">
+                <span>{{ token.symbol }}</span>
+                <span class="token-type" [ngClass]="token.chain">{{ token.type }}</span>
+              </li>
+              <li *ngFor="let token of CONST_BRIDGE_TOKENS" class="disabled">
+                <img [src]="token.logo" alt="">
+                <span>{{ token.symbol }}</span>
+                <span class="token-type" *ngIf="token.type" [ngClass]="token.chain">{{ token.type }}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="token-amount">{{ (receiveAmount | transNumber) || 0 }}</div>
+        </div>
+        <div class="asset">≈ $ {{ receiveAmountFiat || '0.00' }}</div>
+      </div>
+    </div>
+    <p class="detail">Exchange Rate {{ toToken?.symbol || '--' }}/{{ fromToken?.symbol || '--' }} (including fees):
+      <span *ngIf="bridgeRate">1 : {{ bridgeRate }}</span></p>
+    <p class="detail">Poly Fee: <span *ngIf="polyFee">{{ polyFee }} {{ SOURCE_TOKEN_SYMBOL[fromToken.chain] }}</span>
+    </p>
+    <p class="detail">Max slippage: <span>{{ BRIDGE_SLIPVALUE }}%</span></p>
+    <p class="detail">
+      From:<span class="address">
+        <img *ngIf="fromAddress && fromToken?.chain==='ETH'" src="/assets/images/swap-chains/ETH.png" alt="">
+        <img *ngIf="fromAddress && fromToken?.chain==='BSC'" src="/assets/images/swap-chains/BSC.png" alt="">
+        <img *ngIf="fromAddress && fromToken?.chain==='HECO'" src="/assets/images/swap-chains/HECO.png" alt="">
+        {{ fromAddress | shortAddress: 10 }}
+      </span>
+      To:<span class="address">
+        <img *ngIf="toAddress&&toToken?.chain==='ETH'" src="/assets/images/swap-chains/ETH.png" alt="">
+        <img *ngIf="toAddress&&toToken?.chain==='BSC'" src="/assets/images/swap-chains/BSC.png" alt="">
+        <img *ngIf="toAddress&&toToken?.chain==='HECO'" src="/assets/images/swap-chains/HECO.png" alt="">
+        {{ toAddress | shortAddress: 10 }}
+      </span>
+    </p>
+    <div class="swap-confirm">
+      <button class="btn-primary big-btn swap-btn" [ngClass]="{active: checkCanInquiry()}"
+        (click)="swap()">Swap</button>
+    </div>
+  </div>
+  <app-hub-pool></app-hub-pool>
+</section>
+
+<app-tx-progress [txAtPage]="'bridge'"></app-tx-progress>
+
+<app-wallet-connect [show]="showConnectWallet" [connectChainType]="connectChainType" connectOne="true"
+  (closePage)="showConnectWallet=false"></app-wallet-connect>

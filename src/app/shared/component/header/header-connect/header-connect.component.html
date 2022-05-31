@@ -1,0 +1,22 @@
+<div class="connect">
+  <app-header-connect-item *ngIf="ethWalletName" chain="ETH" [accountAddress]="ethAccountAddress"
+    [walletName]="ethWalletName" (disConnect)="disConnect('ETH')" (changeWallet)="changeWallet('ETH')">
+  </app-header-connect-item>
+  <app-header-connect-item *ngIf="bscWalletName" chain="BSC" [accountAddress]="bscAccountAddress"
+    [walletName]="bscWalletName" (disConnect)="disConnect('BSC')" (changeWallet)="changeWallet('BSC')">
+  </app-header-connect-item>
+  <app-header-connect-item *ngIf="hecoWalletName" chain="HECO" [accountAddress]="hecoAccountAddress"
+    [walletName]="hecoWalletName" (disConnect)="disConnect('HECO')" (changeWallet)="changeWallet('HECO')">
+  </app-header-connect-item>
+  <app-header-connect-item *ngIf="neoWalletName" chain="NEO" [accountAddress]="neoAccountAddress"
+    [walletName]="neoWalletName" (disConnect)="disConnect('NEO')" (changeWallet)="changeWallet('NEO')">
+  </app-header-connect-item>
+  <div class="connect-btn" *ngIf="!neoWalletName||!ethWalletName||!bscWalletName||!hecoWalletName"
+    (click)="showConnect()">
+    <img src="/assets/images/swap/link.png" alt="">
+    <span>Connect Wallet</span>
+  </div>
+</div>
+
+<app-wallet-connect [show]="showConnectModal" [connectChainType]="connectChainType"
+  (closePage)="showConnectModal=false"></app-wallet-connect>

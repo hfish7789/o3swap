@@ -1,0 +1,94 @@
+.group-container {
+  position: relative;
+  margin: auto;
+  width: 1000px;
+  background: #1e1e1e;
+  border-radius: 20px;
+  margin-top: 20px !important;
+}
+.group-container.pool {
+  padding: 30px 30px;
+  .header {
+    font-family: "fontDemiBold";
+    height: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 30px;
+  }
+  .group-item {
+    margin-top: 15px;
+    padding: 0 40px;
+    width: 940px;
+    background: #252525;
+    border-radius: 20px;
+    .pool-detail {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #353535;
+      .list {
+        display: flex;
+        .item {
+          width: 150px;
+          .value {
+            height: 36px;
+            line-height: 36px;
+            img {
+              height: 20px;
+            }
+          }
+          .name {
+            color: #8aa1a1;
+            font-family: "fontRegular";
+          }
+        }
+      }
+      .right {
+        display: flex;
+        .deposit-btn {
+          margin-right: 17px;
+        }
+      }
+    }
+    .token-detail {
+      display: flex;
+      align-items: center;
+      height: 56px;
+      .token-logo {
+        margin-right: 13px;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+      }
+      .token-name {
+        color: #8aa1a1;
+        font-size: 14px;
+        color: #46b069;
+        span {
+          height: 28px;
+          line-height: 28px;
+          color: #8aa1a1;
+          font-family: "fontRegular";
+        }
+      }
+    }
+  }
+}
+.group-container.statistical-data {
+  padding: 30px 30px 40px;
+  .header {
+    font-family: "fontDemiBold";
+    height: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 30px;
+  }
+  .desc {
+    margin-top: 20px;
+    color: #8aa1a1;
+    line-height: 30px;
+    font-family: "fontRegular";
+  }
+}

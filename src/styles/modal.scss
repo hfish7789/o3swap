@@ -1,0 +1,48 @@
+.custom-modal {
+  width: 400px !important;
+  transform-origin: center !important;
+  padding: 0;
+  color: #fff;
+  top: 260px;
+  line-height: 1;
+  &.tx-modal {
+    width: 360px !important;
+  }
+  &.connect-wallet-modal {
+    width: 420px !important;
+  }
+  .ant-modal-content,
+  .ant-modal-body {
+    padding: 0;
+    background: #2a2a2a;
+    border-radius: 40px;
+  }
+  .modal-content {
+    & > .title {
+      font-size: 20px;
+      font-family: "fontDemiBold";
+    }
+    .close-group {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      .link {
+        margin-right: 10px;
+        img {
+          width: 21px;
+        }
+      }
+      img.close {
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.custom-stake-modal {
+  width: 420px !important;
+}
+.progress-container .ant-progress-inner {
+  background-color: #2A2A2A!important;
+}

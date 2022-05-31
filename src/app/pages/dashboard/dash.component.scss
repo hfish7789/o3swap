@@ -1,0 +1,175 @@
+section.page-container {
+    display: block;
+    position: relative;
+    margin-top: 40px;
+    font-family: fontRegular;
+    padding-bottom: 30px;
+    width: calc(100% - 400px);
+    margin-left: 240px;
+    min-width: 1100px;
+}
+
+.page-container .top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.page-container .top .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90px;
+    background: #1e1e1e;
+    border-radius: 20px;
+    padding: 0 30px;
+    flex: 1;
+}
+
+.page-container .top .item .title {
+    font-family: fontLight;
+    color: #fff;
+    margin-left: 12px;
+    font-weight: 300;
+}
+
+.page-container .top .item .value {
+    color: #fff;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 12px;
+}
+
+.page-container .top .item:not(:first-child) {
+    margin-left: 10px;
+}
+
+.page-container .charts {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    flex-direction: row;
+}
+
+.page-container .charts > div {
+    background: linear-gradient(0deg,#121212 40%,#19201b);
+    border: 1px solid #353535;
+    border-radius: 12px;
+    margin-top: 20px;
+    width: calc(50% - 5px);
+    padding: 30px 20px 40px 40px;
+}
+
+.page-container .charts .content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-container .charts .content .info-box .title {
+    color: #8aa1a1;
+}
+
+.page-container .charts .content .info-box .tvl, .page-container .charts .content .info-box .volume {
+    margin-top: 10px;
+}
+
+.page-container .charts .content .info-box .tvl .value, .page-container .charts .content .info-box .volume .value {
+    color: #46b069;
+    font-size: 30px;
+    font-family: fontDemiBold;
+    vertical-align: middle;
+}
+
+.page-container .charts .content .info-box .tvl .change.red, .page-container .charts .content .info-box .volume .change.red {
+    background-color: #b04646;
+}
+
+.page-container .charts .content .info-box .tvl .change, .page-container .charts .content .info-box .volume .change {
+    color: #fff;
+    background: #46b069;
+    border-radius: 4px;
+    padding: 4px 2px;
+    margin-left: 12px;
+    vertical-align: middle;
+}
+
+.page-container .charts .content .info-box .time {
+    color: #fff;
+    margin-top: 10px;
+}
+
+.page-container .charts .content .chain {
+    display: inline-block;
+}
+
+.page-container .charts .content .chain .chain-btn {
+    width: 140px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 24px;
+    background: #19231d;
+    border: 1px solid #212d26;
+    border-radius: 4px;
+    color: #8aa1a1;
+}
+.page-container .charts .content .chain .chain-btn img {
+    width: 12px;
+    margin-left: 9px;
+    transition: all .3s;
+    position: absolute;
+    right: 10px;
+}
+.page-container .charts .time-type {
+    margin-top: 25px;
+    margin-right: 10px;
+    text-align: right;
+    color: #546a6a;
+    cursor: pointer;
+}
+.page-container .charts .time-type span.active {
+    color: #8aa1a1;
+}
+.group-container .tvl-charts-box {
+    width: 100%;
+}
+.page-container .charts > div {
+    width: calc(50% - 5px);
+    padding: 30px 20px 40px 40px;
+    background: linear-gradient(0deg,#121212 40%,#19201b);
+    border: 1px solid #353535;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+.page-container .table-container {
+    margin-top: 40px;
+}
+.page-container .table-container .title {
+    color: #fff;
+    font-size: 18px;
+    font-family: fontDemiBold;
+}
+.page-container .table-container .content {
+    background: #1e1e1e;
+    border: 1px solid #353535;
+    border-radius: 12px;
+    margin-top: 24px;
+    padding: 15px 30px;
+}
+.group-container {
+    width: 100%;
+}
+.page-container .top .item .circle {
+    display: inline-block;
+    vertical-align: middle;
+    width: 8px;
+    height: 8px;
+    background: #46b069;
+    border-radius: 50%;
+}

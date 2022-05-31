@@ -1,0 +1,2 @@
+<span *ngIf="showTooltip" nz-tooltip [nzTooltipTitle]="balance">{{ displayBalance | transNumber }}</span>
+<span *ngIf="!showTooltip">{{ (balance | transNumber) || defaultValue }}</span>

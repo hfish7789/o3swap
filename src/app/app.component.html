@@ -1,0 +1,80 @@
+<div class="main" [ngClass]="{home: isHome}">
+  <header>
+    <div class="container">
+      <a routerLink="/">
+        <span class="logo-name">LambSwap</span>
+      </a>
+      <ul *ngIf="isHome !== false" [ngClass]="{ 'menu flex-1': isHome !== false }">
+        <li [ngClass]="{active: isHome}">
+          <a routerLink="/">Home</a>
+        </li>
+        <li [ngClass]="{active: currentPage==='/swap'}">
+          <a routerLink="/swap">Swap</a>
+        </li>
+        <li [ngClass]="{active: currentPage.startsWith('/hub')}">
+          <a routerLink="/hub">Hub</a>
+        </li>
+        <li [ngClass]="{active: currentPage==='/vault'}">
+          <a routerLink="/vault">Vault</a>
+        </li>
+        <li class="add-width">
+          <a routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li>
+          <a href="https://medium.com/o3-labs-o3-wallet" target="_blank">Blog</a>
+        </li>
+        <!-- <li class="add-width" [ngClass]="{active: currentPage.startsWith('/governance')}">
+          <a>Governance</a>
+        </li> -->
+        <li class="add-width">
+          <a nz-tooltip nzTooltipTitle="Coming soon..." nzTooltipPlacement="bottom">Governance</a>
+        </li>
+        <li>
+          <a href="https://docs.o3swap.com/" target="_blank">Doc</a>
+        </li>
+      </ul>
+      <ul *ngIf="isHome === false" [ngClass]="{ 'left-menu': isHome === false, showRisk: showRisk }">
+        <li [ngClass]="{active: isHome}">
+          <a routerLink="/">Home</a>
+        </li>
+        <li [ngClass]="{active: currentPage==='/swap'}">
+          <a routerLink="/swap">Swap</a>
+        </li>
+        <li [ngClass]="{active: currentPage.startsWith('/hub')}">
+          <a routerLink="/hub">Hub</a>
+        </li>
+        <li [ngClass]="{active: currentPage==='/vault'}">
+          <!-- <a nz-tooltip nzTooltipTitle="Coming soon..." nzTooltipPlacement="right"
+            [nzTooltipOrigin]="button1.elementRef">
+            <span nz-element #button1="nzElement">Vault</span>
+          </a> -->
+          <a routerLink="/vault">Vault</a>
+        </li>
+        <li [ngClass]="{active: currentPage==='/dashboard'}">
+          <a routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li>
+          <a href="https://medium.com/o3-labs-o3-wallet" target="_blank">Blog</a>
+        </li>
+        <li>
+          <a nz-tooltip nzTooltipTitle="Coming soon..." nzTooltipPlacement="right"
+            [nzTooltipOrigin]="button3.elementRef">
+            <span nz-element #button3="nzElement">Governance</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://docs.o3swap.com/" target="_blank">Doc</a>
+        </li>
+      </ul>
+      <app-header-connect *ngIf="isHome===false && currentPage!=='/vault'"></app-header-connect>
+      <app-vault-header-connect *ngIf="isHome===false && currentPage==='/vault'"></app-vault-header-connect>
+    </div>
+  </header>
+  <div class="risk-tip" *ngIf="showRisk && !isHome">
+    <img src="/assets/images/risk-icon.png" alt="">
+    O3 Swap is currently in the testing phase. The testing amount is limited to below $20 in USD. Back up your private
+    keys securely and trade at your own risk.
+    <img (click)="closeRisk()" class="close" src="/assets/images/close-risk.png" alt="">
+  </div>
+  <router-outlet></router-outlet>
+</div>

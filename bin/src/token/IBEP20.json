@@ -1,0 +1,104 @@
+{
+    "contractName": "IBEP20",
+    "abi": [
+        {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.8.11+commit.d7f03943\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"e:/develop/o3swap-main/src/token/IBEP20.sol\":\"IBEP20\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"e:/develop/o3swap-main/src/token/IBEP20.sol\":{\"keccak256\":\"0x0ad112ee8700a07e8c59480a970204a0c0d05904d2f38771fe2f09cde623db66\",\"urls\":[\"bzz-raw://8895eee31c097013a0c1ce84a5cc0bb2263b24ed5156382138ade85b4d7776c1\",\"dweb:/ipfs/QmZXStCNbB7R8XNfueckiU713TpfcCThjiL9DHJ63ASZGc\"]}},\"version\":1}",
+    "bytecode": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122033c7ce372675685622c323474b2ee6a2c4bb4c42cace44405c42843ef1cd724464736f6c634300080b0033",
+    "deployedBytecode": "6080604052600080fdfea264697066735822122033c7ce372675685622c323474b2ee6a2c4bb4c42cace44405c42843ef1cd724464736f6c634300080b0033",
+    "sourceMap": "28:63:0:-:0;;;50:38;;;;;;;;;;28:63;;;;;;",
+    "deployedSourceMap": "28:63:0:-:0;;;;;",
+    "sourcePath": "e:/develop/o3swap-main/src/token/IBEP20.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.8.11+commit.d7f03943"
+    },
+    "ast": {
+        "absolutePath": "e:/develop/o3swap-main/src/token/IBEP20.sol",
+        "exportedSymbols": {
+            "IBEP20": [
+                6
+            ]
+        },
+        "id": 7,
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 1,
+                "literals": [
+                    "solidity",
+                    ">=",
+                    "0.5",
+                    ".0"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "0:24:0"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "canonicalName": "IBEP20",
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "fullyImplemented": true,
+                "id": 6,
+                "linearizedBaseContracts": [
+                    6
+                ],
+                "name": "IBEP20",
+                "nameLocation": "37:6:0",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "body": {
+                            "id": 4,
+                            "nodeType": "Block",
+                            "src": "70:18:0",
+                            "statements": []
+                        },
+                        "id": 5,
+                        "implemented": true,
+                        "kind": "constructor",
+                        "modifiers": [],
+                        "name": "",
+                        "nameLocation": "-1:-1:-1",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 2,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "61:2:0"
+                        },
+                        "returnParameters": {
+                            "id": 3,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "70:0:0"
+                        },
+                        "scope": 6,
+                        "src": "50:38:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 7,
+                "src": "28:63:0",
+                "usedErrors": []
+            }
+        ],
+        "src": "0:91:0"
+    },
+    "functionHashes": {},
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "12600",
+            "executionCost": "66",
+            "totalCost": "12666"
+        }
+    }
+}

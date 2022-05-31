@@ -1,0 +1,216 @@
+<section class="page-container">
+  <div class="group-container row1">
+    <div class="item">
+      <div class="header">
+        {{LPToken ? LPToken.symbol : '--' }} <span>BALANCE</span>
+      </div>
+      <div class="content">
+        <div class="value">
+          <app-long-balance class="amount" [balance]="LPToken?.amount" defaultValue="--"></app-long-balance>
+          <span class="rate">--</span>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="header">
+        {{LPToken ? LPToken.symbol : '--' }} <span>STAKED</span>
+      </div>
+      <div class="content">
+        <div class="value">
+          <span class="amount">--</span>
+          <span class="rate">≈＄0.0</span>
+        </div>
+        <div class="btn-primary receive-btn" nz-tooltip nzTooltipTitle="Coming soon..." nzTooltipPlacement="top">
+          STAKE
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="header">
+        O3 <span>EARNED</span>
+      </div>
+      <div class="content">
+        <div class="value">
+          <span class="amount">--</span>
+          <span class="rate">≈＄0.0</span>
+        </div>
+        <div class="btn-primary receive-btn" nz-tooltip nzTooltipTitle="Coming soon..." nzTooltipPlacement="top">
+          CLAIM
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="group-container tab-container row2">
+    <div class="tab-wrap">
+      <div class="tab-nav-scroll">
+        <div class="tabs tabs-add" [ngClass]="{addActive: liquidityType === 'add'}"
+          [routerLink]="['/hub/liquidity', 'add']">
+          Add Liquidity
+        </div>
+        <div class="tabs tabs-remove" [ngClass]="{removeActive: liquidityType === 'remove'}"
+          [routerLink]="['/hub/liquidity', 'remove']">
+          Remove Liquidity
+        </div>
+      </div>
+      <div class="tab-content">
+        <ul class="list-wrap">
+          <ng-container *ngIf="liquidityType === 'add'">
+            <li *ngFor="let tokenItem  of addLiquidityTokens; let i = index ">
+              <div class="detail">
+                <div class="left">
+                  <div class="item-logo-box">
+                    <img [src]="tokenItem.logo" alt="" class="token-logo">
+                    <img class="token-type" *ngIf="tokenItem.type==='ERC-20'"
+                      src="/assets/images/bridge-liquidity/erc20.png" alt="">
+                    <img class="token-type" *ngIf="tokenItem.type==='BEP-20'"
+                      src="/assets/images/bridge-liquidity/bep20.png" alt="">
+                    <img class="token-type" *ngIf="tokenItem.type==='HRC-20'"
+                      src="/assets/images/bridge-liquidity/hrc20.png" alt="">
+                  </div>
+                  <div class="token-name">{{ tokenItem.symbol }}</div>
+                </div>
+                <div class="right">
+                  <div class="input-container">
+                    <input type="number" title="Pay amount" (input)="changeInAmount(tokenItem, i)"
+                      [(ngModel)]="addLiquidityInputAmount[i]" placeholder="0.0">
+                  </div>
+                  <div class="max-status" (click)="maxAddLiquidityInput(i)"
+                    [ngClass]="{active: tokenItem.amount != '--'}">MAX</div>
+                  <div class="balance">
+                    <span>Balance</span>
+                    <app-long-balance [balance]="tokenItem?.amount"></app-long-balance>
+                  </div>
+                </div>
+              </div>
+              <div class="receive">
+                <span>Receive</span>
+                <app-long-balance [balance]="receiveAmount[i]"></app-long-balance>
+              </div>
+              <div class="btn-primary btn-liquidity" (click)="depost(tokenItem, i)">
+                Deposit
+              </div>
+            </li>
+          </ng-container>
+          <ng-container *ngIf="liquidityType !== 'add'">
+            <li *ngFor="let tokenItem  of addLiquidityTokens; let i = index ">
+              <div class="detail">
+                <div class="left">
+                  <div class="item-logo-box">
+                    <img [src]="tokenItem.logo" alt="" class="token-logo">
+                    <img class="token-type" *ngIf="tokenItem.type==='ERC-20'"
+                      src="/assets/images/bridge-liquidity/erc20.png" alt="">
+                    <img class="token-type" *ngIf="tokenItem.type==='BEP-20'"
+                      src="/assets/images/bridge-liquidity/bep20.png" alt="">
+                    <img class="token-type" *ngIf="tokenItem.type==='HRC-20'"
+                      src="/assets/images/bridge-liquidity/hrc20.png" alt="">
+                  </div>
+                  <div class="token-name">{{ tokenItem.symbol }}</div>
+                </div>
+                <div class="right">
+                  <div class="input-container">
+                    <input type="number" title="Receive amount" (input)="changeOutAmount(tokenItem, i)"
+                      [(ngModel)]="removeLiquidityInputAmount[i]" placeholder="0.0">
+                  </div>
+                  <div class="max-status" (click)="maxRemoveLiquidityInput(i)"
+                    [ngClass]="{active: tokenItem.amount != '--'}">MAX</div>
+                  <div class="balance">
+                    <span>Balance</span>
+                    <app-long-balance [balance]="tokenItem?.amount"></app-long-balance>
+                  </div>
+                </div>
+              </div>
+              <div class="receive">
+                <span>PayAmount</span>
+                <app-long-balance [balance]="payAmount[i]"></app-long-balance>
+              </div>
+              <div class="btn-primary btn-liquidity" (click)=" withdrawal(tokenItem, i)">
+                Withdraw
+              </div>
+            </li>
+          </ng-container>
+        </ul>
+        <div class="slipvalue">
+          <span class="name">Max slippage：</span>
+          <span class="value">{{BRIDGE_SLIPVALUE}}%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="group-container blp-detail row2">
+    <div class="left">
+      <ul>
+        <li class="item-list">
+          <div>
+            USDT+BUSD+HUSD: <span class="value">&nbsp;&nbsp;{{ pusdtBalance.ALL | transNumber }}</span>
+          </div>
+        </li>
+        <li class="item-list">
+          <div class="item-logo-box">
+            <img [src]="USDTToken.logo" alt="" class="token-logo">
+            <img class="token-type" src="/assets/images/bridge-liquidity/erc20.png" alt="">
+          </div>
+          <div>
+            <div>
+              <div>USDT: <span class="value">{{ pusdtBalance.ETH.value | transNumber }}</span>
+                ({{ pusdtBalance.ETH.percentage }}%)</div>
+            </div>
+            <div class="progress-container">
+              <nz-progress class="progress" [nzPercent]="pusdtBalance.ETH.percentage" [nzShowInfo]="false"
+                nzStrokeWidth="6" nzStrokeColor="#46B069">
+              </nz-progress>
+            </div>
+          </div>
+        </li>
+        <li class="item-list">
+          <div class="item-logo-box">
+            <img [src]="BUSDToken.logo" alt="" class="token-logo">
+            <img class="token-type" src="/assets/images/bridge-liquidity/bep20.png" alt="">
+          </div>
+          <div>
+            <div>
+              <div>BUSD: <span class="value">{{ pusdtBalance.BSC.value | transNumber }}</span>
+                ({{ pusdtBalance.BSC.percentage }}%)</div>
+            </div>
+            <div class="progress-container">
+              <nz-progress class="progress" [nzPercent]="pusdtBalance.BSC.percentage" [nzShowInfo]="false"
+                nzStrokeWidth="6" nzStrokeColor="#46B069">
+              </nz-progress>
+            </div>
+          </div>
+        </li>
+        <li class="item-list">
+          <div class="item-logo-box">
+            <img [src]="HUSDToken.logo" alt="" class="token-logo">
+            <img class="token-type" src="/assets/images/bridge-liquidity/hrc20.png" alt="">
+          </div>
+          <div>
+            <div>
+              <div>HUSD: <span class="value">{{ pusdtBalance.HECO.value | transNumber }}</span>
+                ({{ pusdtBalance.HECO.percentage }}%)</div>
+            </div>
+            <div class="progress-container">
+              <nz-progress class="progress" [nzPercent]="pusdtBalance.HECO.percentage" [nzShowInfo]="false"
+                nzStrokeWidth="6" nzStrokeColor="#46B069">
+              </nz-progress>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="right">
+      <!-- <div class="item-list">
+        <span class="name">{{ liquidityType == 'add' ? 'Receive' : 'PayAmount' }}</span>
+        <span class="value">{{ (liquidityType == 'add' ? receiveAmount : payAmount) | transNumber }}</span>
+      </div> -->
+      <!-- <div class="item-list">
+        <span class="name">Max slippage</span>
+        <span class="value">{{BRIDGE_SLIPVALUE}}%</span>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<app-tx-progress txAtPage="liquidity"></app-tx-progress>
+
+<app-wallet-connect [show]="showConnectWallet" [connectChainType]="connectChainType" connectOne="true"
+  (closePage)="showConnectWallet=false"></app-wallet-connect>

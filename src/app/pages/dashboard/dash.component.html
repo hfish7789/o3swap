@@ -1,0 +1,310 @@
+<section class="page-container">
+    <div class="top">
+      <div class="item">
+        <p class="title-box">
+          <span class="circle"></span>
+          <span class="title">TRANSACTIONS/24H</span>
+        </p>
+        <p class="value">
+          <!-- <app-long-balance> -->
+            <span class="ng-star-inserted">144</span>
+          <!-- </app-long-balance> -->
+        </p>
+      </div>
+      <div class="item">
+        <p class="title-box">
+          <span class="circle"></span>
+          <span class="title">Total Volume</span>
+        </p>
+        <p class="value"> $ 
+          <!-- <app-long-balance> -->
+            <span nz-tooltip="" class="ng-star-inserted">1,437,346,878.9</span>
+          <!-- </app-long-balance> -->
+        </p>
+      </div>
+      <div class="item">
+        <p class="title-box">
+          <span class="circle"></span>
+          <span class="title">O3 Price</span>
+        </p>
+        <p class="value"> $ 
+          <!-- <app-long-balance> -->
+            <span nz-tooltip="" class="ng-star-inserted">0.66</span>
+          <!-- </app-long-balance> -->
+        </p>
+      </div>
+    </div>
+    <div class="charts">
+      <div class="liquidity">
+        <div class="content">
+          <div class="info-box">
+            <p class="title">Liquidity</p>
+            <p class="tvl">
+              <span class="value">$ 
+                <!-- <app-long-balance> -->
+                  <span nz-tooltip="" class="ng-star-inserted">139.92M</span>
+                <!-- </app-long-balance> -->
+              </span>
+              <span class="change ng-star-inserted red">-10.69%</span>
+              <!---->
+            </p>
+            <p class="time">2021-12-22</p>
+          </div>
+          <div class="chain">
+            <p nz-dropdown="" nzplacement="bottomCenter" nzoverlayclassname="chain-dropdown" class="chain-btn ant-dropdown-trigger"> ALL <img src="/assets/images/swap/arrow-down.png" alt="" class="arrow">
+            </p>
+          </div>
+        </div>
+        <p class="time-type">
+          <span class="active"> 30 </span> | <span> 90 </span> | <span> 180 </span>
+        </p>
+        <app-chart>
+          <!-- <div class="group-container">
+            <div echarts="" class="tvl-charts-box" style="height: 400px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1640223369009">
+              <div style="position: relative; width: 483px; height: 400px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
+                <canvas data-zr-dom-id="zr_0" width="483" height="400" style="position: absolute; left: 0px; top: 0px; width: 483px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
+              </div>
+              <div class="" style="display: none; top: 0px; left: 0px; transform: translate3d(443px, 366px, 0px); visibility: hidden; opacity: 0;"></div>
+            </div>
+          </div> -->
+        </app-chart>
+      </div>
+      <div class="volume-box">
+        <div class="content">
+          <div class="info-box">
+            <p class="title">Volume</p>
+            <p class="volume">
+              <span class="value">$ 
+                <!-- <app-long-balance> -->
+                  <span nz-tooltip="" class="ng-star-inserted">1.41M</span>
+                <!-- </app-long-balance> -->
+              </span>
+              <span class="change red ng-star-inserted">-76.28%</span>
+            </p>
+            <p class="time">2021-12-22</p>
+          </div>
+        </div>
+        <p class="time-type">
+          <span class="active"> 30 </span> | <span> 90 </span> | <span> 180 </span>
+        </p>
+        <app-info-volume-charts>
+          <!-- <div class="group-container">
+            <div echarts="" class="tvl-charts-box" style="height: 400px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1640223369010">
+              <div style="position: relative; width: 483px; height: 400px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
+                <canvas data-zr-dom-id="zr_0" width="483" height="400" style="position: absolute; left: 0px; top: 0px; width: 483px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
+              </div>
+              <div class="" style="display: none; top: 0px; left: 0px; transform: translate3d(134px, 77px, 0px); visibility: hidden; opacity: 0;"></div>
+            </div>
+          </div> -->
+        </app-info-volume-charts>
+      </div>
+    </div>
+    <!-- <div class="liquidity table-container">
+      <p class="title">LIQUIDITY</p>
+      <div class="content">
+        <app-info-liquidity-table>
+          <div class="group-container">
+            <nz-table nzalign="center" nztemplatemode="" class="nz-table ant-table-wrapper">
+              <nz-spin class="ant-spin-nested-loading">
+                <div class="ant-spin-container ng-star-inserted">
+                  <div class="ant-table ant-table-fixed-column">
+                    <nz-table-inner-scroll class="ant-table-container ng-star-inserted">
+                      <div class="ant-table-content ng-star-inserted">
+                        <div class="ant-table-body" style="overflow: auto hidden;">
+                          <table nz-table-content="" tablelayout="fixed" class="ant-table-fixed" style="table-layout: fixed; width: 900px; min-width: 100%;">
+                            <col class="ng-star-inserted" style="width: 173px; min-width: 173px;">
+                            <col class="ng-star-inserted" style="width: 173px; min-width: 173px;">
+                            <col class="ng-star-inserted" style="width: 173px; min-width: 173px;">
+                            <col class="ng-star-inserted" style="width: 173px; min-width: 173px;">
+                            <col class="ng-star-inserted" style="width: 173px; min-width: 173px;">
+                            <col class="ng-star-inserted" style="width: 173px; min-width: 173px;">
+                            <thead class="ant-table-thead ng-star-inserted">
+                              <tr class="ant-table-row ng-star-inserted">
+                                <th class="ant-table-cell">Token Name</th>
+                                <th class="ant-table-cell">Pool</th>
+                                <th class="ant-table-cell">Chain</th>
+                                <th class="ant-table-cell">24h Vol</th>
+                                <th class="ant-table-cell">TVL</th>
+                                <th class="ant-table-cell"></th>
+                              </tr>
+                            </thead>
+                            <tbody class="ant-table-tbody ng-star-inserted">
+                              <tr nz-table-measure-row="" class="ant-table-measure-now ng-star-inserted">
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </nz-table-inner-scroll>
+                  </div>
+                </div>
+              </nz-spin>
+            </nz-table>
+          </div>
+        </app-info-liquidity-table>
+      </div>
+    </div>
+    <div class="vault table-container">
+      <p class="title">VAULT</p>
+      <div class="content">
+        <app-info-vault-table>
+          <div class="group-container">
+            <nz-table nzalign="center" nztemplatemode="" class="nz-table ant-table-wrapper">
+              <nz-spin class="ant-spin-nested-loading">
+                <div class="ant-spin-container ng-star-inserted">
+                  <div class="ant-table ant-table-fixed-column">
+                    <nz-table-inner-scroll class="ant-table-container ng-star-inserted">
+                      <div class="ant-table-content ng-star-inserted">
+                        <div class="ant-table-body" style="overflow: auto hidden;">
+                          <table nz-table-content="" tablelayout="fixed" class="ant-table-fixed" style="table-layout: fixed; width: 900px; min-width: 100%;">
+                            <col class="ng-star-inserted" style="width: 207px; min-width: 207px;">
+                            <col class="ng-star-inserted" style="width: 207px; min-width: 207px;">
+                            <col class="ng-star-inserted" style="width: 207px; min-width: 207px;">
+                            <col class="ng-star-inserted" style="width: 207px; min-width: 207px;">
+                            <col class="ng-star-inserted" style="width: 207px; min-width: 207px;">
+                            <thead class="ant-table-thead ng-star-inserted">
+                              <tr class="ant-table-row ng-star-inserted">
+                                <th class="ant-table-cell">Chain</th>
+                                <th class="ant-table-cell">Mining Pool</th>
+                                <th class="ant-table-cell">Total Stake</th>
+                                <th class="ant-table-cell">APR</th>
+                                <th class="ant-table-cell"></th>
+                              </tr>
+                            </thead>
+                            <tbody class="ant-table-tbody ng-star-inserted">
+                              <tr nz-table-measure-row="" class="ant-table-measure-now ng-star-inserted">
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </nz-table-inner-scroll>
+                  </div>
+                </div>
+              </nz-spin>
+            </nz-table>
+          </div>
+        </app-info-vault-table>
+      </div>
+    </div>
+    <div class="vault table-container">
+      <p class="title">TRANSACTION</p>
+      <div class="content">
+        <app-info-transaction-table>
+          <div class="group-container">
+            <nz-table nzalign="center" nztemplatemode="" class="nz-table ant-table-wrapper">
+              <nz-spin class="ant-spin-nested-loading">
+                <div class="ant-spin-container ng-star-inserted">
+                  <div class="ant-table ant-table-fixed-column ant-table-ping-right">
+                    <nz-table-inner-scroll class="ant-table-container ng-star-inserted">
+                      <div class="ant-table-content ng-star-inserted">
+                        <div class="ant-table-body" style="overflow: auto hidden;">
+                          <table nz-table-content="" tablelayout="fixed" class="ant-table-fixed" style="table-layout: fixed; width: 1200px; min-width: 100%;">
+                            <col class="ng-star-inserted" style="width: 150px; min-width: 150px;">
+                            <col class="ng-star-inserted" style="width: 150px; min-width: 150px;">
+                            <col class="ng-star-inserted" style="width: 150px; min-width: 150px;">
+                            <col class="ng-star-inserted" style="width: 150px; min-width: 150px;">
+                            <col class="ng-star-inserted" style="width: 150px; min-width: 150px;">
+                            <col class="ng-star-inserted" style="width: 150px; min-width: 150px;">
+                            <col class="ng-star-inserted" style="width: 150px; min-width: 150px;">
+                            <col class="ng-star-inserted" style="width: 150px; min-width: 150px;">
+                            <thead class="ant-table-thead ng-star-inserted">
+                              <tr class="ant-table-row ng-star-inserted">
+                                <th class="ant-table-cell">Trading Route</th>
+                                <th class="ant-table-cell">Amount</th>
+                                <th class="ant-table-cell">Chain Route</th>
+                                <th class="ant-table-cell">Value</th>
+                                <th class="ant-table-cell">Account</th>
+                                <th class="ant-table-cell">Action</th>
+                                <th class="ant-table-cell">Time</th>
+                                <th class="ant-table-cell ng-star-inserted"></th>
+                              </tr>
+                            </thead>
+                            <tbody class="ant-table-tbody ng-star-inserted">
+                              <tr nz-table-measure-row="" class="ant-table-measure-now ng-star-inserted">
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                                <td class="nz-disable-td ng-star-inserted" style="padding: 0px; border: 0px; height: 0px;"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </nz-table-inner-scroll>
+                  </div>
+                </div>
+              </nz-spin>
+            </nz-table>
+            <div class="pagination">
+              <nz-pagination class="ant-pagination">
+                <li nz-pagination-item="" title="Previous Page" class="ant-pagination-prev ant-pagination-disabled ng-star-inserted">
+                  <button class="ant-pagination-item-link ng-star-inserted" disabled="">
+                    <i nz-icon="" nztype="left" class="anticon anticon-left">
+                      <svg viewBox="64 64 896 896" focusable="false" fill="currentColor" width="1em" height="1em" data-icon="left" aria-hidden="true">
+                        <path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path>
+                      </svg>
+                    </i>
+                  </button>
+                </li>
+                <li nz-pagination-item="" title="1" class="ant-pagination-item ant-pagination-item-active ng-star-inserted">
+                  <a class="ng-star-inserted">1</a>
+                </li>
+                <li nz-pagination-item="" title="2" class="ant-pagination-item ng-star-inserted">
+                  <a class="ng-star-inserted">2</a>
+                </li>
+                <li nz-pagination-item="" title="3" class="ant-pagination-item ng-star-inserted">
+                  <a class="ng-star-inserted">3</a>
+                </li>
+                <li nz-pagination-item="" title="4" class="ant-pagination-item ng-star-inserted">
+                  <a class="ng-star-inserted">4</a>
+                </li>
+                <li nz-pagination-item="" title="5" class="ant-pagination-item ng-star-inserted">
+                  <a class="ng-star-inserted">5</a>
+                </li>
+                <li nz-pagination-item="" title="Next 5 Pages" class="ant-pagination-jump-next ant-pagination-jump-next-custom-icon ng-star-inserted">
+                  <a class="ant-pagination-item-link ng-star-inserted">
+                    <div class="ant-pagination-item-container ng-star-inserted">
+                      <i nz-icon="" nztype="double-right" class="anticon ant-pagination-item-link-icon anticon-double-right ng-star-inserted">
+                        <svg viewBox="64 64 896 896" focusable="false" fill="currentColor" width="1em" height="1em" data-icon="double-right" aria-hidden="true">
+                          <path d="M533.2 492.3L277.9 166.1c-3-3.9-7.7-6.1-12.6-6.1H188c-6.7 0-10.4 7.7-6.3 12.9L447.1 512 181.7 851.1A7.98 7.98 0 00188 864h77.3c4.9 0 9.6-2.3 12.6-6.1l255.3-326.1c9.1-11.7 9.1-27.9 0-39.5zm304 0L581.9 166.1c-3-3.9-7.7-6.1-12.6-6.1H492c-6.7 0-10.4 7.7-6.3 12.9L751.1 512 485.7 851.1A7.98 7.98 0 00492 864h77.3c4.9 0 9.6-2.3 12.6-6.1l255.3-326.1c9.1-11.7 9.1-27.9 0-39.5z"></path>
+                        </svg>
+                      </i>
+                      <span class="ant-pagination-item-ellipsis">•••</span>
+                    </div>
+                  </a>
+                </li>
+                <li nz-pagination-item="" title="10" class="ant-pagination-item ng-star-inserted">
+                  <a class="ng-star-inserted">10</a>
+                </li>
+                <li nz-pagination-item="" title="Next Page" class="ant-pagination-next ng-star-inserted">
+                  <button class="ant-pagination-item-link ng-star-inserted">
+                    <i nz-icon="" nztype="right" class="anticon anticon-right">
+                      <svg viewBox="64 64 896 896" focusable="false" fill="currentColor" width="1em" height="1em" data-icon="right" aria-hidden="true">
+                        <path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"></path>
+                      </svg>
+                    </i>
+                  </button>
+                </li>
+              </nz-pagination>
+            </div>
+          </div>
+        </app-info-transaction-table>
+      </div>
+    </div> -->
+  </section>

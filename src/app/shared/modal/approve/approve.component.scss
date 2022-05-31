@@ -1,0 +1,41 @@
+section.wrapper {
+  & > .title {
+    padding: 30px 0 0 30px;
+  }
+  .content {
+    font-family: 'fontRegular';
+    padding: 30px;
+    .approve-content {
+      padding: 24px 30px;
+      text-align: center;
+      background: #353535;
+      border-radius: 10px;
+      img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+      }
+      .title {
+        margin-top: 20px;
+      }
+      .desc {
+        margin-top: 15px;
+        padding-top: 18px;
+        border-top: 1px solid #ffffff0d;
+        color: #8aa1a1;
+        line-height: 19px;
+      }
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      height: 60px;
+      border-radius: 10px;
+      border: none;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+      background: #6162ef;
+    }
+  }
+}

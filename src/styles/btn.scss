@@ -1,0 +1,67 @@
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 36px;
+  background-color: #46B069;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #ffffff;
+  cursor: pointer;
+  &.unstake-btn {
+    background-color: #6162ef;
+  }
+  &.receive-btn {
+    width: 90px;
+    height: 30px;
+    background-color: #202020;
+    border: 1px solid #46b069;
+    border-radius: 10px;
+    color: #46b069;
+    &:hover {
+      background-color: #1e2621;
+    }
+  }
+  &.btn-liquidity {
+    height: 100%;
+    color: #6162EF;
+    background-color: #2A2A2A;
+    &:hover {
+      background-color: #6162EF;
+      color: #fff;
+    }
+  }
+  &.remove-btn {
+    background-color: #6162EF;
+  }
+  &.big-btn {
+    width: 400px;
+    height: 60px;
+    border-radius: 20px;
+  }
+  &.deposit-btn {
+    width: 90px;
+    height: 36px;
+    background-color: #2B312D;
+    color: #46B069;
+    &:hover {
+      background-color: #46B069;
+      color: #fff;
+    }
+  }
+  &.withdrawal-btn {
+    width: 90px;
+    height: 36px;
+    background-color: #2F2F3B;
+    color: #6162EF;
+    &:hover {
+      background-color: #6162EF;
+      color: #fff;
+    }
+  }
+}
+
+:focus {
+  outline: none;
+}

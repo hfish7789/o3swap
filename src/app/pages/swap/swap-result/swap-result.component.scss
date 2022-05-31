@@ -1,0 +1,177 @@
+section.inquiry-wrapper {
+  .inquiry-json {
+    margin: 0 auto;
+    margin-top: 120px;
+    display: block;
+    width: 260px;
+  }
+  .inquirying {
+    text-align: center;
+    font-size: 18px;
+    color: #f1f1f1;
+    margin-top: 30px;
+    font-family: "fontRegular";
+  }
+}
+
+section.result-wrapper {
+  .exchange-amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 53px;
+    font-size: 22px;
+    .left {
+      display: flex;
+      align-items: center;
+    }
+    img.exchange {
+      width: 24px;
+      margin: 0 10px;
+    }
+    .arrow {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 24px;
+      border-radius: 4px;
+      &:hover {
+        background: #353535;
+      }
+      img {
+        width: 20px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .receive {
+    height: 110px;
+    margin-top: 24px;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    .optimal {
+      width: 70px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      font-family: "fontRegular";
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-image: url("/assets/images/swap/optimal.png");
+      background-position: 1px -1px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+    .sub-title {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+    }
+    .amount,
+    .fiat {
+      text-align: center;
+    }
+    .amount {
+      font-size: 24px;
+      line-height: 28px;
+      color: #46b069;
+    }
+    .fiat {
+      font-size: 14px;
+      margin-top: 12px;
+      font-family: "fontRegular";
+    }
+  }
+  .more-price {
+    text-align: center;
+    padding: 18px 0;
+    color: #46b069;
+    border-bottom: 2px dashed #ffffff1a;
+    cursor: pointer;
+    font-family: "fontRegular";
+  }
+  .fee-group {
+    font-size: 14px;
+    color: #8aa1a1;
+    font-family: "fontRegular";
+  }
+  .fee-item {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .value {
+      display: flex;
+      img {
+        width: 14px;
+        margin-right: 7px;
+      }
+    }
+    &.route {
+      flex-direction: column;
+      align-items: initial;
+      ul.routes {
+        margin-top: 10px;
+      }
+    }
+    ul.routes {
+      display: flex;
+      justify-content: flex-end;
+      li {
+        display: inline-flex;
+        align-items: center;
+      }
+      img {
+        max-width: 20px;
+        max-height: 20px;
+        margin: 0 4px;
+      }
+    }
+  }
+  button.confirm {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 30px;
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+    &.active {
+      cursor: pointer;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  .setting-group {
+    .refresh {
+      width: 120px;
+      height: 50px;
+      background: #8aa1a12e;
+      border-radius: 10px;
+      color: #8aa1a1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 18px;
+        height: 18px;
+        background: transparent;
+        border-radius: none;
+        margin-left: 8px;
+      }
+      span {
+        text-align: center;
+        display: inline-block;
+        width: 20px;
+        color: #46b069;
+        margin: 0 4px;
+      }
+    }
+  }
+}

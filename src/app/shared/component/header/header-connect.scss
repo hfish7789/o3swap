@@ -1,0 +1,19 @@
+.connect {
+  min-width: 190px;
+  display: flex;
+  .connect-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 40px;
+    background: #2b312d;
+    border-radius: 20px;
+    font-family: "fontRegular";
+    cursor: pointer;
+    img {
+      width: 18px;
+      margin-right: 7px;
+    }
+  }
+}

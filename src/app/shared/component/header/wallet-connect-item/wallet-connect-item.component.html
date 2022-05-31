@@ -1,0 +1,34 @@
+<ul class="wallets" *ngIf="!walletChain">
+  <li class="wallet" *ngFor="let wallet of walletList" (click)="connectWallet(wallet)">
+    <div *ngIf="walletName!==wallet.name" [ngClass]="{disabled: disableEthO3 && chain!=='NEO' && wallet.name=='O3'}">
+      <img class="logo" [src]="wallet.logo" alt="">
+      <span class="name">Connect {{ wallet.name }}</span>
+      <img class="option" src="/assets/images/swap/add.png" alt="">
+    </div>
+    <div *ngIf="walletName===wallet.name" class="active">
+      <span class="name">{{ wallet.name }}</span>
+      <p class="address" (click)="copy(walletAddress)">
+        {{ walletAddress | shortAddress: 10 }}
+        <img class="copy" src="/assets/images/swap/copy.png" alt="">
+      </p>
+    </div>
+  </li>
+</ul>
+
+<ul class="wallets" *ngIf="walletChain">
+  <li class="wallet" *ngFor="let wallet of walletList" (click)="connectWallet(wallet)">
+    <div *ngIf="walletChain!==chain || walletName!==wallet.name"
+      [ngClass]="{disabled: disableEthO3 && chain!=='NEO' && wallet.name=='O3'}">
+      <img class="logo" [src]="wallet.logo" alt="">
+      <span class="name">Connect {{ wallet.name }}</span>
+      <img class="option" src="/assets/images/swap/add.png" alt="">
+    </div>
+    <div *ngIf="walletChain===chain && walletName===wallet.name" class="active">
+      <span class="name">{{ wallet.name }}</span>
+      <p class="address" (click)="copy(walletAddress)">
+        {{ walletAddress | shortAddress: 10 }}
+        <img class="copy" src="/assets/images/swap/copy.png" alt="">
+      </p>
+    </div>
+  </li>
+</ul>

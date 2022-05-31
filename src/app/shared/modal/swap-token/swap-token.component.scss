@@ -1,0 +1,128 @@
+section.wrapper {
+  height: 560px;
+  & > .title {
+    padding: 30px 0 0 30px;
+  }
+  .search {
+    padding: 0 25px;
+    margin-top: 30px;
+  }
+  input {
+    width: 100%;
+    height: 50px;
+    background: #353535;
+    border: 1px solid #353535;
+    border-radius: 10px;
+    padding: 0 20px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    &::placeholder {
+      color: #4a4a4a;
+    }
+    &.focus {
+      background: #2b312d;
+      border: 1px solid #46b069;
+    }
+  }
+  .chains {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 390px;
+    width: 70px;
+    z-index: 9999;
+    background: #222222;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 40px;
+    padding: 30px 15px;
+    span {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: #ffffff1a;
+      border-radius: 10px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      cursor: pointer;
+      &:not(:first-child) {
+        margin-top: 16px;
+      }
+      &.disable {
+        cursor: default;
+        pointer-events: none;
+      }
+      &.all {
+        background-image: url("/assets/images/chains/all.png");
+        &:hover,
+        &.active {
+          background-image: url("/assets/images/chains/all-active.png");
+        }
+      }
+      &.eth {
+        background-image: url("/assets/images/chains/eth.png");
+        &:hover,
+        &.active {
+          background-image: url("/assets/images/chains/eth-active.png");
+        }
+      }
+      &.neo {
+        background-image: url("/assets/images/chains/neo.png");
+        &:hover,
+        &.active {
+          background-image: url("/assets/images/chains/neo-active.png");
+        }
+      }
+      &.bsc {
+        background-image: url("/assets/images/chains/bsc.png");
+        &:hover,
+        &.active {
+          background-image: url("/assets/images/chains/bsc-active.png");
+        }
+      }
+      &.heco {
+        background-image: url("/assets/images/chains/heco.png");
+        &:hover,
+        &.active {
+          background-image: url("/assets/images/chains/heco-active.png");
+        }
+      }
+    }
+  }
+  ul.tokens {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    height: 350px;
+    font-size: 16px;
+    overflow-y: scroll;
+    li.token {
+      padding-left: 90px;
+      padding-right: 20px;
+      height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      &:hover,
+      &.active {
+        background: #303030;
+      }
+      &.disable {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .amount {
+        font-family: "fontRegular";
+        margin-left: 5px;
+      }
+      img {
+        max-width: 36px;
+        max-height: 36px;
+        margin-right: 15px;
+      }
+    }
+  }
+}

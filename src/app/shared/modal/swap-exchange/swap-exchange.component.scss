@@ -1,0 +1,72 @@
+section.wrapper {
+  height: 560px;
+  & > .title {
+    padding: 30px 0 0 30px;
+  }
+  ul.exchanges {
+    padding: 0 30px;
+    margin-top: 25px;
+    max-height: 440px;
+    overflow-y: scroll;
+    & > li {
+      position: relative;
+      background: #2a2a2a;
+      border: 1px solid #ffffff0d;
+      border-radius: 10px;
+      padding: 20px 0 20px 20px;
+      display: flex;
+      cursor: pointer;
+      &:not(:first-child) {
+        margin-top: 12px;
+      }
+      &:hover {
+        background: #2b312d;
+        border: 1px solid #46b069;
+        .name {
+          font-family: "fontMedium";
+        }
+      }
+      &.active {
+        background: linear-gradient(0deg, #46b069, #00af92);
+        .name {
+          font-family: "fontDemiBold";
+        }
+        .left .fiat {
+          color: #fff;
+        }
+        ul.routes {
+          color: #eff2f2;
+        }
+      }
+      .left {
+        width: 190px;
+        display: inline-flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-right: 25px;
+        .name {
+          font-size: 18px;
+          line-height: 20px;
+        }
+        .fiat {
+          margin-top: 13px;
+          color: #8aa1a1;
+          font-size: 14px;
+          font-family: "fontRegular";
+        }
+      }
+      ul.routes {
+        color: #8aa1a1;
+        font-family: "fontRegular";
+        font-size: 12px;
+        li:not(:first-child) {
+          margin-top: -5px;
+        }
+        img {
+          width: 20px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

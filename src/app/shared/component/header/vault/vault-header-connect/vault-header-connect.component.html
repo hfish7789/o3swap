@@ -1,0 +1,12 @@
+<div class="connect">
+  <app-header-connect-item *ngIf="vaultWallet" [chain]="vaultWallet?.chain" [accountAddress]="vaultWallet?.address"
+    [walletName]="vaultWallet?.walletName" (disConnect)="disConnect()" (changeWallet)="changeWallet()">
+  </app-header-connect-item>
+  <div class="connect-btn" *ngIf="!vaultWallet" (click)="showConnect()">
+    <img src="/assets/images/swap/link.png" alt="">
+    <span>Connect Wallet</span>
+  </div>
+</div>
+
+<app-vault-wallet-connect [show]="showConnectModal" [connectChainType]="connectChainType"
+  (closePage)="showConnectModal=false"></app-vault-wallet-connect>

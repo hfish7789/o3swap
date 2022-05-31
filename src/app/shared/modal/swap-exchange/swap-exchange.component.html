@@ -1,0 +1,21 @@
+<section class="wrapper modal-content">
+  <div class="close-group">
+    <img (click)="close()" class="close" src="/assets/images/swap/close.png" alt="">
+  </div>
+  <p class="title">Choose Quotes</p>
+  <ul class="exchanges scroll">
+    <li class="exchange-item" *ngFor="let swapItem of receiveSwapPathArray; index as index"
+      (click)="changeSwapPath(index)" [ngClass]="{active: chooseSwapPathIndex===index}">
+      <div class="left">
+        <p class="name">{{ swapItem.receiveAmount | transNumber }} {{ toTokenSymbol }}</p>
+        <p class="fiat">≈＄{{ swapItem.fiat }}<span *ngIf="swapItem.aggregator ">({{ swapItem.aggregator }})</span></p>
+      </div>
+      <ul class="routes">
+        <li *ngFor="let name of swapItem.swapPath; index as index">
+          <img [src]="swapItem.swapPathLogo[index]" alt="">{{ name }}<span
+            *ngIf="index!==swapItem.swapPath.length-1">></span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>

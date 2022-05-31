@@ -1,0 +1,58 @@
+section.wrapper {
+  width: 460px;
+  min-height: 631px;
+  height: max-content;
+  margin: 0 auto;
+  margin-top: 89px;
+  background-image: url("/assets/images/swap/bg.png");
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 30px;
+  position: relative;
+  .setting-group {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    img {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      background: #8aa1a12e;
+      border-radius: 10px;
+      &:hover {
+        background: #2b312d;
+      }
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+  .title {
+    font-size: 22px;
+    padding: 10px 0 0 10px;
+    font-family: "fontDemiBold";
+  }
+  .sub-title {
+    line-height: 12px;
+    font-size: 16px;
+    color: #8aa1a1;
+    font-family: "fontRegular";
+  }
+  .content-border {
+    border: 1px solid #ffffff0d;
+    border-radius: 20px;
+    &.content-border-active {
+      background: #2b312d;
+      border: 1px solid #46b069;
+    }
+  }
+  button.confirm {
+    height: 60px;
+    background: #46b069;
+    border-radius: 20px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+  }
+}

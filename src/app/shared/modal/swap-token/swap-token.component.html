@@ -1,0 +1,28 @@
+<section class="wrapper modal-content">
+  <div class="close-group">
+    <img (click)="close()" class="close" src="/assets/images/swap/close.png" alt="">
+  </div>
+  <p class="title">Choose</p>
+  <div class="search">
+    <input type="text" (focus)="isfocusSearchInput=true" (blur)="isfocusSearchInput=false"
+      [ngClass]="{focus: isfocusSearchInput}" (input)="search($event)" placeholder="Search token name">
+  </div>
+  <div class="chains">
+    <!-- <span (click)="changeChain('ALL')" [ngClass]="{active: chain==='ALL'}" class="all"></span> -->
+    <span (click)="changeChain('ETH')" [ngClass]="{active: chain==='ETH', disable: showOnlyNNeo || showOnlyNeoChain}"
+      class="eth"></span>
+    <span (click)="changeChain('BSC')" [ngClass]="{active: chain==='BSC', disable: showOnlyNNeo || showOnlyNeoChain}"
+      class="bsc"></span>
+    <span (click)="changeChain('HECO')" [ngClass]="{active: chain==='HECO', disable: showOnlyNNeo || showOnlyNeoChain}"
+      class="heco"></span>
+    <span (click)="changeChain('NEO')" [ngClass]="{active: chain==='NEO'}" class="neo"></span>
+  </div>
+  <ul class="tokens scroll">
+    <li class="token" *ngFor="let tokenItem of displayTokens"
+      [ngClass]="{active: activeToken?.symbol===tokenItem?.symbol, disable: isDisableToken(tokenItem)}" (click)="selectThisToken(tokenItem)">
+      <img [src]="tokenItem?.logo" alt="">
+      <span class="name flex-1">{{ tokenItem?.symbol }}</span>
+      <app-long-balance class="amount" [balance]="tokenItem?.amount"></app-long-balance>
+    </li>
+  </ul>
+</section>
